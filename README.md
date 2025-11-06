@@ -34,7 +34,7 @@ El diseño del sistema se basa en una arquitectura **Cliente-Servidor**, donde l
 | :--- | :--- | :--- |
 | **Desarrollo Móvil** | **Java** y **Android Studio** | Lenguaje de programación nativo y entorno de desarrollo para Android. |
 | **Networking/API** | **Retrofit 2** | Librería para gestionar las peticiones HTTP entre la aplicación y la API. |
-| **Backend/API** | **API REST** *hosteada* en **Microsoft Azure** | Lógica de negocio y procesamiento de datos. |
+| **Backend/API** | **API REST** | Lógica de negocio y procesamiento de datos. |
 | **Base de Datos** | **MySQL** | Almacenamiento centralizado para garantizar la consistencia e integridad de los datos. |
 | **Formato de Datos** | **JSON** (JavaScript Object Notation) | Utilizado para la comunicación e intercambio de datos entre la app y el servidor. |
 | **Control de Versiones** | **Git** y **GitHub** | Para el manejo del código fuente y la colaboración. |
