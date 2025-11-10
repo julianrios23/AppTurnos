@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">AppTurnos</string>
+    <string name="app_name">Clinica La Trinidad</string>
+    <string name="logo_description">Logo de la aplicación</string>
+    <string name="username_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="register_button">Registrarse</string>
+    <string name="forgot_password_button">¿Olvido tu contraseña?</string>
+    <string name="forgot_password">¿Olvido tu contraseña?</string>
+    <string name="clinica">CLÍNICA</string>
+    <string name="la_trinidad">LA TRINIDAD</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="usuario_hint">Usuario</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="profile_picture_description">Foto de perfil</string>
+    <string name="welcome_message">¡Bienvenido/a, [Nombre Apellido]!</string>
+    <string name="agendar_turno">Agendar turno</string>
+    <string name="mis_datos">Mis datos</string>
+    <string name="historial">Historial</string>
+    <string name="salir">Salir</string>
 </resources>
