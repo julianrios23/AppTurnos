@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/profileImageView"
+            android:id="@+id/ivPerfil"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/icono_placeholder" android:background="@drawable/circulo_backgroud" android:padding="15dp"
@@ -29,7 +29,7 @@
             app:tint="#D9D9D9" />
 
         <TextView
-            android:id="@+id/welcomeTextView"
+            android:id="@+id/tvnombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_message" tools:text="¡Bienvenido/a, [Nombre Apellido]!"

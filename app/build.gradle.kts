@@ -45,14 +45,13 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation("com.google.code.gson:gson:2.10.1")
-    // Retrofit para llamadas HTTP
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    // Converter Gson para Retrofit
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    // OkHttp3 para cliente HTTP
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
-    // Picasso para carga de imágenes
     implementation("com.squareup.picasso:picasso:2.8")
+    implementation("androidx.navigation:navigation-fragment:2.7.7")
+    implementation("androidx.navigation:navigation-ui:2.7.7")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -18,6 +18,10 @@ public class AyudanteNavegacion {
         }
     }
 
-
+    public static void showInicioFragment(AppCompatActivity activity) {
+        FragmentManager fm = activity.getSupportFragmentManager();
+        fm.beginTransaction()
+            .replace(R.id.fragment_container_view, InicioFragment.newInstance())
+            .commit();
+    }
 }
-

@@ -11,12 +11,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.julian.appturnos.R;
+import com.julian.appturnos.modelos.Usuario;
 
 public class InicioFragment extends Fragment {
 
+    private static final String TAG = "InicioFragment";
     private InicioViewModel mViewModel;
+    private TextView tvnombre;
 
     public static InicioFragment newInstance() {
         return new InicioFragment();
@@ -25,14 +29,29 @@ public class InicioFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        View view = inflater.inflate(R.layout.fragment_inicio, container, false);
+        tvnombre = view.findViewById(R.id.tvnombre);
+        return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(InicioViewModel.class);
-        // TODO: Use the ViewModel
-    }
 
+        mViewModel.getUserLiveData().observe(getViewLifecycleOwner(), user -> {
+            if (user != null) {
+                String welcomeMessage = "¡Bienvenido " + user.getNombre() + " " + user.getApellido() + "!";
+                tvnombre.setText(welcomeMessage);
+            } else {
+                tvnombre.setText(R.string.welcome_message);
+            }
+        });
+
+        mViewModel.getErrorLiveData().observe(getViewLifecycleOwner(), errorMessage -> {
+            if (errorMessage != null) {
+                // Optionally display a Toast or SnackBar with the error message
+            }
+        });
+    }
 }

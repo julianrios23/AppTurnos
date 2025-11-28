@@ -678,13 +678,63 @@ app.post('/api/pacientes/mi-perfil/imagen', authMiddleware, upload.single('imgpe
     }
 });
 
+app.get('/api/pacientes/perfil', authMiddleware, async (req, res) => {
+    const idUsuarioLogueado = req.user.id;
 
+    try {
+        const [usuarios] = await db.query(
+            `SELECT 
+                u.idusuarios,
+                u.nombre,
+                u.apellido,
+                u.telefono,
+                u.mail,
+                u.rol,
+                u.imgperfil,
+                p.IdPaciente,
+                p.DNI,
+                p.IdObraSocial
+            FROM 
+                usuarios AS u
+            LEFT JOIN 
+                paciente AS p ON u.idusuarios = p.id_usuario
+            WHERE 
+                u.idusuarios = ?`,
+            [idUsuarioLogueado]
+        );
 
+        if (usuarios.length === 0) {
+            return res.status(404).json({ message: "Usuario no encontrado." });
+        }
 
+        res.json(usuarios[0]);
 
+    } catch (err) {
+        console.error("error en get /api/pacientes/perfil:", err);
+        res.status(500).json({ message: "Error en el servidor al obtener el perfil." });
+    }
+});
+//obtener perfil de usuario
+app.get('/api/usuarios/perfil', authMiddleware, async (req, res) => {
+    const idUsuarioLogueado = req.user.id;
 
+    try {
+        const [usuarios] = await db.query(
+            'SELECT idusuarios, nombre, apellido, telefono, mail, rol, imgperfil FROM usuarios WHERE idusuarios = ?',
+            [idUsuarioLogueado]
+        );
 
+        if (usuarios.length === 0) {
+            return res.status(404).json({ message: "Usuario no encontrado." });
+        }
 
+        res.json(usuarios[0]);
+
+    } catch (err) {
+        console.error("error en get /api/usuarios/perfil:", err);
+        res.status(500).json({ message: "Error en el servidor al obtener el perfil." });
+    }
+});
 
 
 // inicio el servidor en el puerto definido en las variables de entorno o el 3000 por defecto
