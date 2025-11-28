@@ -19,4 +19,5 @@
     <string name="mis_datos">Mis datos</string>
     <string name="historial">Historial</string>
     <string name="salir">Salir</string>
+    <string name="fingerprint_login_description">Iniciar sesión con huella dactilar</string>
 </resources>
